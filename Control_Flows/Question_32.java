@@ -1,3 +1,3 @@
 public class Question_32{
-   ///ok done 
+   ///ok done bro
 }
