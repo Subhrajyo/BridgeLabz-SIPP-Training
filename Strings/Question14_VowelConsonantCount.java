@@ -11,7 +11,7 @@ public class Question14_VowelConsonantCount {
         System.out.println("Vowels: " + counts[0]);
         System.out.println("Consonants: " + counts[1]);
         
-        scanner.close();
+        
     }
 
     public static int[] countVowelsAndConsonants(String text) {
@@ -21,7 +21,7 @@ public class Question14_VowelConsonantCount {
         for (int i = 0; i < text.length(); i++) {
             char ch = text.charAt(i);
             if (isVowel(ch)) {
-                vowelsCount++;
+                vowelsCount++; 
             } else if (isConsonant(ch)) {
                 consonantsCount++;
             }

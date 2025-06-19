@@ -38,7 +38,7 @@ public class Question17_ShortestLongestWord {
                 currentWord.setLength(0);
             }
         }
-        words[wordIndex] = currentWord.toString(); // Add the last word
+        words[wordIndex] = currentWord.toString(); 
         
         return words;
     }
