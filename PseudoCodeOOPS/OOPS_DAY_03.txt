@@ -1,0 +1,55 @@
+Pseudo-code Problems - Moderate
+
+1. Food Delivery System
+-----------------------
+Class Customer
+    Attributes: name, address, phone
+    Methods: getDetails()
+
+Class Restaurant
+    Attributes: name, location, menuItems
+    Methods: showMenu()
+
+Class DeliveryBoy
+    Attributes: name, id, phone
+    Methods: deliverOrder()
+
+Class Order
+    Attributes: orderId, Customer, Restaurant, DeliveryBoy, items, totalAmount
+    Methods: placeOrder(), assignDeliveryBoy(), showOrderDetails()
+
+Main
+    Create Customer object
+    Create Restaurant object
+    Create DeliveryBoy object
+    Create Order object (composition of Customer, Restaurant, DeliveryBoy)
+    Call placeOrder()
+    Call assignDeliveryBoy()
+    Call showOrderDetails()
+
+
+2. Medical Record Manager
+-------------------------
+Interface Searchable
+    Method: search(keyword)
+
+Interface Printable
+    Method: printReport()
+
+Class LabReport implements Searchable, Printable
+    Attributes: reportId, testName, result
+    Methods: search(keyword), printReport()
+
+Class Prescription implements Searchable, Printable
+    Attributes: prescriptionId, doctorName, medicines
+    Methods: search(keyword), printReport()
+
+Class DischargeSummary implements Searchable, Printable
+    Attributes: summaryId, patientName, diagnosis
+    Methods: search(keyword), printReport()
+
+Main
+    Create list of reports (LabReport, Prescription, DischargeSummary)
+    For each report in list
+        Call search("some keyword")
+        Call printReport()

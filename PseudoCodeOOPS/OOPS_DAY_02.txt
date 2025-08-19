@@ -1,0 +1,44 @@
+1. Traffic Signal Simulation (Easy)
+-----------------------------------
+Enum TrafficLight { RED, YELLOW, GREEN }
+
+Class TrafficSignal:
+    Attribute: currentLight (TrafficLight)
+    
+    Constructor: initialize with RED
+    
+    Method: switchLight()
+        if currentLight == RED → change to GREEN
+        else if currentLight == GREEN → change to YELLOW
+        else if currentLight == YELLOW → change to RED
+    
+    Method: displayLight()
+        print currentLight
+
+Main:
+    Create TrafficSignal object
+    Loop for some time:
+        displayLight()
+        wait(interval)   // simulate time
+        switchLight()
+
+
+2. Smart Farming System (Moderate)
+----------------------------------
+Abstract class Crop
+    Method: getWaterRequirement() → abstract
+    Method: harvest() → abstract
+
+Class Rice extends Crop
+    getWaterRequirement() → "High water needed"
+    harvest() → "Harvesting rice..."
+
+Class Wheat extends Crop
+    getWaterRequirement() → "Medium water needed"
+    harvest() → "Harvesting wheat..."
+
+Main:
+    Create Crop reference → Rice
+    Call methods
+    Create Crop reference → Wheat
+    Call methods

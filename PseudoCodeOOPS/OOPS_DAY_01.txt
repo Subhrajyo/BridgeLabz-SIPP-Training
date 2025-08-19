@@ -1,0 +1,28 @@
+Class Pet
+    Attributes:
+        name
+        age
+    Constructor(name, age)
+    Method: displayInfo()
+
+Class Dog extends Pet
+    Attributes:
+        breed
+    Constructor(name, age, breed)
+    Override displayInfo()
+
+Class Cat extends Pet
+    Attributes:
+        color
+    Constructor(name, age, color)
+    Override displayInfo()
+
+Class Bird extends Pet
+    Attributes:
+        canFly (boolean)
+    Constructor(name, age, canFly)
+    Override displayInfo()
+
+Main:
+    Create objects of Dog, Cat, Bird
+    Call displayInfo() for each
