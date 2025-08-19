@@ -1,0 +1,44 @@
+START
+Define CLASS Item with:
+    - name
+    - price
+
+Create a LIST<Item> called cart
+
+Add some items to the cart:
+    Item("Laptop", 50000)
+    Item("Mouse", 800)
+    Item("Keyboard", 1500)
+
+Define a GENERIC METHOD calculateTotal(cart):
+    total = 0
+    FOR each item in cart:
+        total = total + item.price
+    RETURN total
+
+Call calculateTotal(cart)
+Display "Total Price = " + total
+END
+
+
+
+
+
+START
+Define CLASS Doctor with:
+    - name
+    - specialization
+
+Create a MAP<DepartmentName, List<Doctor>> called hospital
+
+Add entries:
+    "Cardiology" → [Dr. A, Dr. B]
+    "Neurology" → [Dr. C]
+    "Orthopedics" → [Dr. D, Dr. E]
+
+To display doctors by department:
+    FOR each department in hospital:
+        PRINT department name
+        FOR each doctor in department list:
+            PRINT doctor.name
+END

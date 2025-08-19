@@ -1,0 +1,34 @@
+START
+Create a HashMap<StudentName, Marks>
+
+Insert some students with their marks:
+    "Alice" → 85
+    "Bob" → 92
+    "Charlie" → 78
+
+Use STREAM to find the entry with MAXIMUM marks
+
+Display:
+    "Top Scorer: [Name] with marks [Marks]"
+END
+
+
+
+
+START
+Define CLASS Employee with:
+    - name
+    - department
+
+Create an ArrayList<Employee>
+
+Add employees:
+    John from IT
+    Sara from HR
+    Mike from IT
+
+Use STREAM to FILTER employees where department = "IT"
+
+For each employee in filtered list:
+    PRINT employee.name + " works in " + employee.department
+END

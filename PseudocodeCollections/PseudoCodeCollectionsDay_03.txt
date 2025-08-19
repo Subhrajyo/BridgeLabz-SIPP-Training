@@ -1,0 +1,44 @@
+START
+Define CLASS Book with:
+    - title
+    - yearPublished
+    - rating
+
+Create a LIST<Book> library
+
+Add books to library:
+    Book("Book A", 2018, 4.8)
+    Book("Book B", 2012, 4.7)
+    Book("Book C", 2019, 4.3)
+    Book("Book D", 2021, 4.9)
+
+Use STREAM with FILTER:
+    condition → yearPublished > 2015 AND rating > 4.5
+
+Collect the filtered books into a new list
+
+For each book in filtered list:
+    PRINT book.title + " (" + yearPublished + ") rating " + rating
+END
+
+
+
+START
+Define GENERIC CLASS Transaction<T> with:
+    - transactionId
+    - amount
+    - method (of type T)
+
+Create different payment method classes:
+    CLASS UPI with upiId
+    CLASS Card with cardNumber
+    CLASS NetBanking with accountNumber
+
+Create objects:
+    Transaction<UPI> t1 = new Transaction(101, 500, UPI("abc@upi"))
+    Transaction<Card> t2 = new Transaction(102, 2000, Card("1234-5678"))
+    Transaction<NetBanking> t3 = new Transaction(103, 10000, NetBanking("ACC123"))
+
+Process each transaction:
+    PRINT "Transaction ID: " + id + ", Amount: " + amount + ", Method: " + method.details
+END
