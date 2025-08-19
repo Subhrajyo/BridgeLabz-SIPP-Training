@@ -1,0 +1,48 @@
+Class TextEditor
+    Attribute: text (string)
+    Attribute: undoStack (Stack)
+
+    Method: typeWord(word)
+        push current text into undoStack
+        append word to text
+
+    Method: deleteWord()
+        push current text into undoStack
+        remove last word from text
+
+    Method: undo()
+        if undoStack is not empty
+            text = pop from undoStack
+        else
+            print "Nothing to undo"
+
+    Method: showText()
+        print text
+
+
+
+
+
+Class Customer
+    Attribute: name
+    Attribute: type  // "normal" or "emergency"
+
+Class CallCenter
+    Attribute: normalQueue (Queue)
+    Attribute: emergencyQueue (Queue)
+
+    Method: addCustomer(customer)
+        if customer.type == "emergency"
+            enqueue into emergencyQueue
+        else
+            enqueue into normalQueue
+
+    Method: serveCustomer()
+        if emergencyQueue is not empty
+            customer = dequeue from emergencyQueue
+        else if normalQueue is not empty
+            customer = dequeue from normalQueue
+        else
+            print "No customers in queue"
+
+        print "Serving customer: " + customer.name

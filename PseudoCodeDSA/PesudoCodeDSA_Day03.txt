@@ -1,0 +1,67 @@
+Class Patient
+    Attribute: patientId
+    Attribute: name
+    Attribute: age
+    Attribute: disease
+
+Class PatientRecordSystem
+    Attribute: records (HashMap<patientId, Patient>)
+
+    Method: addPatient(patient)
+        records.put(patient.patientId, patient)
+
+    Method: getPatient(patientId)
+        if records contains patientId
+            return records.get(patientId)
+        else
+            print "Patient not found"
+
+    Method: updatePatient(patientId, newDetails)
+        if records contains patientId
+            records.put(patientId, newDetails)
+        else
+            print "Patient not found"
+
+    Method: deletePatient(patientId)
+        if records contains patientId
+            records.remove(patientId)
+            print "Patient deleted"
+        else
+            print "Patient not found"
+
+
+
+
+
+
+
+Class MazeSolver
+    Attribute: maze (2D array)
+    Attribute: solution (2D array)
+
+    Method: solveMaze(x, y)
+        if (x,y) is outside maze OR maze[x][y] == wall
+            return false
+
+        if (x,y) is destination
+            mark solution[x][y] = 1
+            return true
+
+        if solution[x][y] == 1
+            return false  // already visited
+
+        mark solution[x][y] = 1
+
+        // Try moving in all directions
+        if solveMaze(x+1, y) == true
+            return true
+        if solveMaze(x, y+1) == true
+            return true
+        if solveMaze(x-1, y) == true
+            return true
+        if solveMaze(x, y-1) == true
+            return true
+
+        // Backtrack
+        mark solution[x][y] = 0
+        return false

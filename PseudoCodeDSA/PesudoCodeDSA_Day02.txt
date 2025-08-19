@@ -1,0 +1,40 @@
+Class QuizTimer
+    Attribute: timeSlots (CircularArray)
+    Attribute: currentIndex
+
+    Method: startQuiz()
+        currentIndex = 0
+        while currentIndex < length of timeSlots
+            remainingTime = timeSlots[currentIndex]
+
+            while remainingTime > 0
+                if remainingTime == 5
+                    print "Warning: Only 5 seconds left for this question!"
+                wait 1 second
+                remainingTime = remainingTime - 1
+
+            print "Time up for Question " + (currentIndex + 1)
+            currentIndex = (currentIndex + 1) % length of timeSlots
+
+
+
+
+
+
+Class Job
+    Attribute: jobId
+    Attribute: deadline
+    Attribute: processingTime
+
+Class JobScheduler
+    Attribute: priorityQueue  // Min-Heap based on deadline, then processingTime
+
+    Method: addJob(job)
+        insert job into priorityQueue
+
+    Method: processJobs()
+        while priorityQueue is not empty
+            job = extractMin from priorityQueue
+            print "Processing Job: " + job.jobId
+            wait job.processingTime units
+            print "Job Completed: " + job.jobId
