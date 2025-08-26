@@ -1,0 +1,18 @@
+package org.example;
+
+public class StringUtils {
+    public String reverse(String str){
+        if(str==null) return  null;
+        return new StringBuilder(str).reverse().toString();
+    }
+    public boolean isPalindrome(String str){
+        if(str==null)
+            return false;
+        String reverse=reverse(str);
+        return str.equalsIgnoreCase(reverse);
+    }
+    public String toUpperCase(String str){
+        if(str==null) return null;
+        return str.toUpperCase();
+    }
+}
